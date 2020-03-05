@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputminute
+    inputminute = prompt("số phút gọi trong tháng")
+    let minute = parseInt(inputminute)
+    let charges
+    if (minute <= 50){
+        charges = 25 + 600 * minute;
+        alert("cước điện thoại của gia đình là " + charges + " đồng")
+    }else if (minute <= 200){
+        charges =25 + 600 * 50 + (minute - 50) * 400
+        alert("cước điện thoại của gia đình là " + charges + " đồng")
+    }else {
+        charges = 25 + 600 * 5 + 400 * 150 +(minute - 200) * 200
+        alert("cước điện thoại của gia đình là " + charges + " đồng")
+    }
+    
+</script>
+</body>
+</html>

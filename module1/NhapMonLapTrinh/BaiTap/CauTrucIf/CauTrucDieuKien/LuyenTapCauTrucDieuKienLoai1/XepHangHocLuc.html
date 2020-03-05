@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputScoresMouth
+    let inputScores15m
+    let inputScores60m
+    let inputScoresSemester
+    inputScoresMouth = prompt("nhập điểm kiểm tra miệng")
+    inputScores15m = prompt("nhập điểm kiểm tra 15 phút")
+    inputScores60m = prompt("nhập điểm kiểm tra 1 tiết")
+    inputScoresSemester = prompt("nhập điểm kiểm tra học kỳ")
+    let ScoresMouth = parseInt(inputScoresMouth)
+    let Scores15m = parseInt(inputScores15m)
+    let Scores60m = parseInt(inputScores60m)
+    let ScoresSemester = parseInt(inputScoresSemester)
+    let Medium = (ScoresMouth + Scores15m + Scores60m * 2 + ScoresSemester * 3) / 7
+    if (Medium < 4){
+        alert("xếp loại kém")
+    }else if (Medium < 5.5){
+        alert("xếp loại trung bình yếu")
+    }else if (Medium < 7){
+        alert("xếp loại trung bình")
+    }else if (Medium < 8.5){
+        alert("xếp loại khá")
+    }else {
+        alert("xếp loại giỏi")
+    }
+
+</script>
+
+</body>
+</html>

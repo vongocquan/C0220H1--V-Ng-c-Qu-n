@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputrevenue
+    inputrevenue =prompt("doanh thu bán được trong ngày")
+    let revenue = parseInt(inputrevenue)
+    let profit
+    if (revenue < 200000){
+        profit = revenue * 0.03
+        alert("hoa hồng nhận được là " + profit)
+    }else if (revenue < 500000){
+        profit =revenue * 0.05
+        alert("hoa hồng nhận được là " + profit)
+    }else {
+        profit = revenue * 0.1
+        alert("hoa hồng nhận được là " + profit)
+    }
+</script>
+</body>
+</html>

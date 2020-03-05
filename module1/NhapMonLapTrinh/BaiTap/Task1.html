@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputname;
+    let inputCMND;
+    let inputbirth;
+    let inputemail;
+    let inputaddress;
+    let inputCustomer;
+    let inputdiscount;
+    let inputgowith;
+    let inputnumberday;
+    let inputservice;
+    let inputroom;
+    inputname = prompt("name")
+    inputCMND = prompt("id card")
+    inputbirth = prompt("Date of birth")
+    inputemail = prompt("email")
+    inputaddress = prompt("address")
+    inputCustomer = prompt("customer (Diamond, Platinum, Gold, Silver, Member)")
+    inputdiscount = prompt("discount")
+    inputgowith = prompt("other quantities")
+    inputnumberday = prompt("number of days rented")
+    inputservice = prompt("type of service (Villa, House, Room)")
+    inputroom = prompt("Kind of room (Vip, Business,  Normal)")
+    let Name = parseInt(inputname)
+    let CMND = parseInt(inputCMND)
+    let birth =parseInt(inputbirth)
+    let Email = parseInt(inputemail)
+    let Address = parseInt(inputaddress)
+    let Customer = parseInt(inputCustomer)
+    let Discount = parseInt(inputdiscount)
+    let Gowith =parseInt(inputgowith)
+    let Numberday = parseInt(inputnumberday)
+    let Service = parseInt(inputservice)
+    let Room = parseInt(inputroom)
+    let result
+    if (Service = Villa){
+        result = 500 * Numberday * ( 1 - Discount / 100)
+    }else if (Service = House){
+        result = 300 * Numberday * ( 1 - Discount / 100)
+    }else {
+        result = 100 * Numberday * ( 1 - Discount / 100)
+    }
+    alert("name: "+ Name + ", id card: " + CMND + ", Date of birth: " +birth + ", Email: " +Email + ", address: " +Address + ", customer: " +Customer + ", discount: "+Discount +", other quantities: "+Gowith + ", number of days rented: " + Numberday + ", type of service: " +Service + ", Kind of room: "+ Room + ", result= "+ result)
+</script>
+</body>
+</html>

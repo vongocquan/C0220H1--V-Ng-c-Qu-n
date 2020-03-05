@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let result;
+    let string = prompt("enter the string: ");
+    for (var i = 0; i <= (string.length -1); i++)
+    for (    var j = (string.length -1); j >= 0; j--){
+        if (string[i] === string[j]){
+            result = true
+        }else {
+            result = false
+        }
+    }alert(result)
+</script>
+</body>
+</html>

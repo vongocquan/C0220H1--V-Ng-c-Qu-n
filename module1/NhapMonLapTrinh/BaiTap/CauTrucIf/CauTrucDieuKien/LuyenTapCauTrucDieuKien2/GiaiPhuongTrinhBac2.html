@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputa;
+    let inputb;
+    let inputc;
+    inputa = prompt("nhập a");
+    inputb = prompt("nhập b");
+    inputc = prompt("nhập c");
+    let a = parseInt(inputa);
+    let b = parseInt(inputb);
+    let c = parseInt(inputc);
+    let N = (b * b - 4 * a * c);
+    let x1;
+    let x2;
+    if (N < 0){
+        alert("phương trình vô nghiệm")
+    }else if (N == 0){
+        x = - b / (2 * a)
+        alert(x)
+    }else {
+        x1 = (-b + Math.sqrt(N)) / (2 * a)
+        x2 = (-b - Math.sqrt(N)) / ( 2 * a)
+        alert(x1 + " và " + x2)
+    }
+
+</script>
+</body>
+</html>

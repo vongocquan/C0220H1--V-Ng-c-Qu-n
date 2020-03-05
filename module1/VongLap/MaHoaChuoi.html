@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    count = 1;
+    let result= "";
+    let string = prompt("nhập vào một chuỗi" );
+    let mid = string.length
+    for (var i = 0; i < mid; i ++){
+        if (string[i] === string[i+1]){
+            count ++;
+        }else {
+            result += string[i]+ count;
+            count = 1;
+        }
+    }alert(result)
+</script>
+</body>
+</html>
