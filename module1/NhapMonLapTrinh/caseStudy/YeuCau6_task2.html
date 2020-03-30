@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    class Employee{
+        get ten() {
+            return this._ten;
+        }
+
+        set ten(value) {
+            this._ten = value;
+        }
+
+        get ngaySinh() {
+            return this._ngaySinh;
+        }
+
+        set ngaySinh(value) {
+            this._ngaySinh = value;
+        }
+
+        get cmnd() {
+            return this._cmnd;
+        }
+
+        set cmnd(value) {
+            this._cmnd = value;
+        }
+
+        get sdt() {
+            return this._sdt;
+        }
+
+        set sdt(value) {
+            this._sdt = value;
+        }
+
+        get email() {
+            return this._email;
+        }
+
+        set email(value) {
+            this._email = value;
+        }
+
+        get trinhDo() {
+            return this._trinhDo;
+        }
+
+        set trinhDo(value) {
+            this._trinhDo = value;
+        }
+
+        get viTri() {
+            return this._viTri;
+        }
+
+        set viTri(value) {
+            this._viTri = value;
+        }
+        _ten;
+        _ngaySinh;
+        _cmnd;
+        _sdt;
+        _email;
+        _trinhDo;
+        _viTri;
+        constructor(ten, ngaySinh, cmnd, sdt, email, trinhDo, viTri){
+            this._ten = ten;
+            this._ngaySinh = ngaySinh;
+            this._cmnd = cmnd;
+            this._sdt = sdt;
+            this._email = email;
+            this._trinhDo = trinhDo;
+            this._viTri = viTri;
+        }
+    }
+    let listEmployees = [];
+    function mainMenu () {
+        let menu = prompt("1. Add new Employees" + "\n 2. Display information Employees" +
+        "\n 3. Salary of Employees" + "\n 4. Exit")*1;
+        switch (menu) {
+            case 1:{
+                addEmployees()
+            }case 2:{
+                displayEmployees()
+            }case 3:{
+                slaryEmployees()
+            }
+        }
+    }function addEmployees(){
+        let employee = new Employee();
+        employee.ten = (prompt("nhập tên nhân viên: "));
+        employee.ngaySinh = (prompt("nhập ngày sinh"));
+        employee.cmnd = (prompt("nhập chứng minh thư: "));
+        employee.sdt = (prompt("nhập số điện thoại: "));
+        employee.email = (prompt("nhập email: "));
+        employee.trinhDo = (prompt("nhập trình độ: "));
+        employee.viTri = (prompt("nhập vị trí làm việc: "));
+        alert("thêm thành công");
+        listEmployees.push(employee);
+        mainMenu();
+
+
+    }function displayEmployees(){
+        let result = "";
+        for (let i =0; i<listEmployees.length; i++){
+            result += (i+1) + ". "+listEmployees[i].ten +"\n";
+        }let hieThi = prompt(result)*1;
+        alert("tên: " + listEmployees[hieThi - 1].ten +
+        "\n 1. ngày sinh: " + listEmployees[hieThi - 1].ngaySinh +
+        "\n2. chứng minh thư: " + listEmployees[hieThi - 1].cmnd +
+        "\n3. số điện thoại: " + listEmployees[hieThi - 1].sdt+
+        "\n4. email: " + listEmployees[hieThi - 1].email +
+        "\n5. trình độ: " +listEmployees[hieThi - 1].trinhDo+
+        "\n6. vị trí: " + listEmployees[hieThi - 1].viTri);
+        mainMenu();
+    }
+    function slaryEmployees(){
+        let result = "";
+        for (let i =0; i<listEmployees.length; i++){
+            result += (i+1) + ". "+listEmployees[i].ten +"\n";
+        }let hieThi = prompt(result)*1;
+        if (listEmployees[hieThi-1].viTri === "Manager"){
+            alert("lương: 500$");
+        }else if (listEmployees[hieThi-1].viTri === "Sale"){
+            alert("lương: 300$");
+        }else if (listEmployees[hieThi-1].viTri === "Marketing"){
+            alert("lương: 200$");
+        }
+        mainMenu()
+    }
+
+    mainMenu()
+</script>
+</body>
+</html>
