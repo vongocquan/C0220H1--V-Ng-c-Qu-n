@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let regexp = /^[A-Z]/;
+    let str = prompt("nhập một chuỗi: ");
+    function isFirstLetterUpperCase() {
+        if (regexp.test(str)){
+            alert(str+ " chữ cái đầu in hoa")
+        }else {
+            alert(str + " chữ cái đầu không in hoa")
+        }
+    }
+    isFirstLetterUpperCase()
+</script>
+</body>
+</html>

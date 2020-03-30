@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let result = "";
+    let name = prompt("nhập tên: ");
+    let idcard = prompt("nhập Cmnd: ");
+    let birthday = prompt("nhập ngày, tháng, năm sinh: ");
+    let email = prompt("nhập email: ");
+    let address = prompt("nhập địa chỉ: ");
+    let Customer  = prompt("nhập loại khách hàng (Diamond, Platinum, Gold, Silver, Member): ");
+    let discount = prompt("giảm giá bao nhiêu phần trăm: ")*1;
+    let amount = prompt("nhập số lượng đi kèm: ");
+    let day = prompt("nhập số ngày thuê: ")*1;
+    let service = prompt("nhập loại dịch vụ (Villa, House, Room):  ");
+    let room = prompt("nhập loại phòng thuê (Vip, Business,  Normal): ");
+    if (service == "Villa"){
+        result = 500 * (1 - (discount / 100)) * day;
+    }else if (service == "House"){
+        result = 300 * (1 - (discount / 100)) * day;
+    }else if (service == "Room"){
+        result = 100 * (1 - (discount / 100)) * day;
+    }
+alert("name: "+ name + ", pay: "+result)
+</script>
 </body>
 </html>

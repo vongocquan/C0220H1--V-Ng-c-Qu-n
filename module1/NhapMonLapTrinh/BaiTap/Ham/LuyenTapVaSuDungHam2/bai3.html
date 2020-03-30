@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let num = prompt("nhập vào một số: ")*1
+    function tinhGiaiThua(num) {
+        let giaithua = 1;
+        for (var i = 1; i < num; i++){
+            giaithua *= i;
+        }return giaithua
+
+    }alert(tinhGiaiThua(num))
+</script>
 </body>
 </html>

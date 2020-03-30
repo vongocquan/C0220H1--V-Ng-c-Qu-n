@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function isPrime(number) {
+        let count = 0;
+        for (let i = 1; i < number; i++){
+            if (number % i == 0){
+                count++
+            }
+        }
+        if (count == 1){
+            return true
+        }
+            return false;
+
+    }alert(isPrime(5))
+    for (let num =0; num <= 10000; num++){
+        if (isPrime(num))
+            document.write(num + ", ")
+    }
+</script>
 </body>
 </html>

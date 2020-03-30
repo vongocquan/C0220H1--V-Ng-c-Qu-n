@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let number = prompt("nhập một số ");
+    let ctr = number.toString();
+    let result= [ctr[0]]
+    for (let i = 1; i < ctr.length; i++){
+        if ((ctr[i-1] % 2 === 0) && (ctr[i] % 2 ===0)){
+            result.push('-', ctr[i])
+
+
+        }else{
+            result.push(ctr[i])
+        }
+    } alert(result.join(''))
+</script>
 </body>
 </html>

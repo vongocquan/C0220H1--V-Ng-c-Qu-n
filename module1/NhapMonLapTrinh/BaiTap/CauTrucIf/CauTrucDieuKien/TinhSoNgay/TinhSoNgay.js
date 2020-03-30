@@ -1,7 +1,7 @@
 function show() {
     let month = document.getElementById("month");
     let result = document.getElementById("result");
-    let day
+    let day;
 
     switch (month.value *1) {
         case 1:

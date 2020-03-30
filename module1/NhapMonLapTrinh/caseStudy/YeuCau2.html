@@ -2,9 +2,140 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let menu = prompt("1. Thông Tin Khách Hàng"+"\n" +
+        "2. Chỉnh Sửa Thông Tin Khách Hàng" + "\n" +
+        "3. Thanh Toán") *1;
+    let name = "võ Ngọc Quân";
+    let idcard = 206109631;
+    let birthday = "04/ 02/ 1997";
+    let email = "Quanv4297@gmail.com";
+    let address = "Quảng Nam";
+    let Customer  = "Platinum";
+    let amount = 1;
+    let day = 2;
+    let service ="House";
+    let room = "Normal";
+    switch (menu) {
+        case 1: {
+            alert("name= "+ name +"\n"+
+            "idcard= " +idcard + "\n"+
+                "birthday= "+ birthday +"\n"+
+                "email= "+ email +"\n"+
+                "address= "+ address +"\n"+
+                "Customer= "+ Customer +"\n"+
+                "amount= "+ amount +"\n"+
+                "day= "+ day +"\n"+
+                "service= "+ service +"\n"+
+                "room= "+ room)
+
+        }case 2: {
+            let edit = (prompt("1. name= "+ name +"\n"+
+                "2. idcard= " +idcard + "\n"+
+                "3. birthday= "+ birthday +"\n"+
+                "4. email= "+ email +"\n"+
+                "5. address= "+ address +"\n"+
+                "6. Customer= "+ Customer +"\n"+
+                "7. amount= "+ amount +"\n"+
+                "8. day= "+ day +"\n"+
+                "9. service= "+ service +"\n"+
+                "10. room= "+ room + "\n"+
+                "0. return"))*1;
+            switch (edit) {
+                case 1:{
+                    name = prompt("chỉnh tên: ");
+                    break;
+                }case 2: {
+                    idcard = prompt("chỉnh cmnd: ");
+                    break;
+                }case 3: {
+                    birthday = prompt("chỉnh ngày sinh: ");
+                    break;
+                }case 4:{
+                    email = prompt("chỉnh email");
+                    break;
+                }case 5: {
+                    address = prompt("chỉnh địa chỉ: ");
+                    break;
+                }case 6:{
+                    Customer = prompt("chỉnh loại khách(Diamond, Platinum, Gold, Silver, Member)");
+                    break;
+                }case 7:{
+                    amount = prompt("chỉnh số lượng đi kèm: ");
+                    break;
+                }case 8:{
+                    day = prompt("chỉnh số ngày thuê: ");
+                    break;
+                }case 9:{
+                    service = prompt("chỉnh loại dịch vụ (Villa, House, Room): ");
+                    break;
+                }case 10:{
+                    room =prompt("chỉnh loại phòng(Vip, Business,  Normal): ");
+                    break;
+                }default: {
+                    alert("Failed")}
+            }alert("name= "+ name +"\n"+
+                "idcard= " +idcard + "\n"+
+                "birthday= "+ birthday +"\n"+
+                "email= "+ email +"\n"+
+                "address= "+ address +"\n"+
+                "Customer= "+ Customer +"\n"+
+                "amount= "+ amount +"\n"+
+                "day= "+ day +"\n"+
+                "service= "+ service +"\n"+
+                "room= "+ room)
+        }case 3:{
+            let result;
+            let money=0;
+            if (service === "Villa"){
+                money = 500;
+            }else if (service === "House"){
+                money = 300;
+            }else if (service === "Room"){
+                money = 100;
+            }
+            let discountasress = 0;
+            if (address == "Huế"){
+                discountasress = 10;
+            }else if (address == "Quảng Nam"){
+                discountasress = 5;
+            }else if (address == "Đà Nẳng"){
+                discountasress = 20;
+            }else {
+                discountasress = 0;
+            }
+            let discountday = 0;
+            if (day > 7){
+                discountday = 30;
+            }else if (day >= 5){
+                discountday = 20;
+            }else if (day >= 2){
+                discountday = 10;
+            }
+            let discountCustomer = 0;
+            if (Customer == "Diamond"){
+                discountCustomer = 15;
+            }else if (Customer == "Platium"){
+                discountCustomer = 10;
+            }else if (Customer == "Gold"){
+                discountCustomer = 5;
+            }else if (Customer == "Silver"){
+                discountCustomer = 2;
+            }else if (Customer == "Member"){
+                discountCustomer =0;
+            }
+            result = money * day - (discountasress + discountday + discountCustomer);
+
+            alert(result)
+        }
+default:{
+    alert("Bạn hãy chọn các chức năng có trong trình đơn")
+}
+    }
+
+</script>
 </body>
 </html>

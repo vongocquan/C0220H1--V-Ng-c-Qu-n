@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let result;
+    let listCustomers = [];
+    let arr = [];
+    class Customer {
+        get ten() {
+            return this._ten;
+        }
+
+        set ten(value) {
+            this._ten = value;
+        }
+
+        get cmnd() {
+            return this._cmnd;
+        }
+
+        set cmnd(value) {
+            this._cmnd = value;
+        }
+
+        get ngaySinh() {
+            return this._ngaySinh;
+        }
+
+        set ngaySinh(value) {
+            this._ngaySinh = value;
+        }
+
+        get email() {
+            return this._email;
+        }
+
+        set email(value) {
+            this._email = value;
+        }
+
+        get diaChi() {
+            return this._diaChi;
+        }
+
+        set diaChi(value) {
+            this._diaChi = value;
+        }
+
+        get loaiCustomer() {
+            return this._loaiCustomer;
+        }
+
+        set loaiCustomer(value) {
+            this._loaiCustomer = value;
+        }
+
+        get giamGia() {
+            return this._giamGia;
+        }
+
+        set giamGia(value) {
+            this._giamGia = value;
+        }
+
+        get soNguoiDiKem() {
+            return this._soNguoiDiKem;
+        }
+
+        set soNguoiDiKem(value) {
+            this._soNguoiDiKem = value;
+        }
+
+        get soNgayThue() {
+            return this._soNgayThue;
+        }
+
+        set soNgayThue(value) {
+            this._soNgayThue = value;
+        }
+
+        get loaiDichVu() {
+            return this._loaiDichVu;
+        }
+
+        set loaiDichVu(value) {
+            this._loaiDichVu = value;
+        }
+
+        get loaiPhongThue() {
+            return this._loaiPhongThue;
+        }
+
+        set loaiPhongThue(value) {
+            this._loaiPhongThue = value;
+        }
+
+        _ten;
+        _cmnd;
+        _ngaySinh;
+        _email;
+        _diaChi;
+        _loaiCustomer;
+        _giamGia;
+        _soNguoiDiKem;
+        _soNgayThue;
+        _loaiDichVu;
+        _loaiPhongThue;
+
+        constructor(ten, cmnd, ngaySinh, email, diaChi, loaiCustomer, giamGia, soNguoiDiKem, soNgayThue, loaiDichVu, loaiPhongThue) {
+            this._ten = ten;
+            this._cmnd = cmnd;
+            this._ngaySinh = ngaySinh;
+            this._email = email;
+            this._diaChi = diaChi;
+            this._loaiCustomer = loaiCustomer;
+            this._giamGia = giamGia;
+            this._soNguoiDiKem = soNguoiDiKem;
+            this._soNgayThue = soNgayThue;
+            this._loaiDichVu = loaiDichVu;
+            this._loaiPhongThue = loaiPhongThue;
+        }
+
+        tinhGiaTien(loaiDichVu, soNgayThue, giamGia) {
+            if (loaiDichVu == "Villa") {
+                result = 500 * soNgayThue * (1 - giamGia / 100);
+                alert(result)
+            } else if (loaiDichVu == "House") {
+                result = 300 * soNgayThue * (1 - giamGia / 100);
+                alert(result)
+            } else if (loaiDichVu == Room) {
+                result = 100 * soNgayThue * (1 - giamGia / 100);
+                alert(result)
+            }
+        }
+
+    }function addNewCustomer() {
+        let check = false;
+        let regexpCMND = /^[0-9]{8,8}$/;
+        let regexpEmail = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+[A-Za-z0-9]*.[A-Za-z0-9]+[A-Za-z0-9]*/;
+        let regexpNgaySinh = /^([0][1-9]|[1][12])[/]([0][1-9]|[12][0-9]|[3][01])[/][0-9]{4,4}$/;
+        let regexp = /^[0-9]/;
+        let ten = prompt("tên khách hàng");
+        do {
+            var cmnd = prompt("chứng minh thư");
+            if (regexpCMND.test(cmnd)){
+                check = true;
+            }else {
+                alert("chứng minh thư không hợp lệ")
+            }
+        }while (!check);
+        check = false;
+        do {
+            var ngaysinh = prompt("ngày sinh");
+            if (regexpNgaySinh.test(ngaysinh)){
+                check = true;
+            }else {
+                alert("ngày sinh không hợp lệ")
+            }
+        }while (!check);
+        check = false;
+        do {
+            var emai = prompt("email");
+            if (regexpEmail.test(emai)){
+                check = true;
+            }else{
+                alert("email không hợp lệ")
+            }
+
+        }while (!check);
+        check= false;
+        let diaChi = prompt("địa chỉ");
+        let loaiCustomer = prompt("loại Customer");
+        do {
+            var giamGia = prompt("giảm giá");
+            if (regexp.test(giamGia)){
+                check = true;
+            }else {
+                alert("không hợp lệ")
+            }
+        }while (!check);
+        check = false;
+        do {
+            var soNguoiDiKem = prompt("số người đi kèm");
+            if (regexp.test(soNguoiDiKem)){
+                check = true;
+            }else {
+                alert("không hợp lệ")
+            }
+        }while (!check);
+        check = false;
+        do {
+            var soNgayThue = prompt("số ngày thuê");
+            if (regexp.test(soNgayThue)){
+                check = true;
+            }else {
+                alert("không hợp lệ")
+            }
+        }while (!check);
+        let loaiDichVu = prompt("loại dich vu");
+        let loaiPhongThue = prompt("loại phòng thuê");
+        arr.push(ten);
+        arr.push(cmnd);
+        arr.push(ngaysinh);
+        arr.push(emai);
+        arr.push(diaChi);
+        arr.push(loaiCustomer);
+        arr.push(giamGia);
+        arr.push(soNguoiDiKem);
+        arr.push(soNgayThue);
+        arr.push(loaiDichVu);
+        arr.push(loaiPhongThue);
+        listCustomers.push(arr);
+        displayMainMenu();
+    }function displayCustomers(){
+        var ten= "";
+        for (let i = 0; i <listCustomers.length; i++){
+            ten += i  + ". "+ listCustomers[i][0] + "\n";
+        }let dsTen = prompt(ten)*1;
+        alert("tên: "+ listCustomers[dsTen][0] +
+            "\n cmnd: " + listCustomers[dsTen][1] +
+            "\n ngày sinh: " + listCustomers[dsTen][2]+
+            "\n email: " +listCustomers[dsTen][3]+
+            "\n địa chỉ: " + listCustomers[dsTen][4]+
+            "\n loại khách hàng: " +listCustomers[dsTen][5]+
+            "\n giảm giá: " + listCustomers[dsTen][6]+
+            "\n số người đi kèm: "+listCustomers[dsTen][7]+
+            "\n số ngày thuê: "+listCustomers[dsTen][8]+
+            "\n loại dịch vụ: " + listCustomers[dsTen][9]+
+            "\n loại phòng: " + listCustomers[dsTen][10]);
+        displayMainMenu()
+    }
+    function editCustomer(){
+        var ten= " ";
+        for (let i = 0; i < listCustomers.length; i++){
+            ten += (i  + ". " + listCustomers[i][0]) + "\n";
+        } dsTen = prompt(ten)*1;
+        let edit = prompt("1. tên: "+ listCustomers[dsTen][0] +
+            "\n2. cmnd: " + listCustomers[dsTen][1] +
+            "\n3. ngày sinh: " + listCustomers[dsTen][2]+
+            "\n4. email: " +listCustomers[dsTen][3]+
+            "\n5. địa chỉ: " + listCustomers[dsTen][4]+
+            "\n6. loại khách hàng: " +listCustomers[dsTen][5]+
+            "\n7. giảm giá: " + listCustomers[dsTen][6]+
+            "\n8. số người đi kèm: "+listCustomers[dsTen][7]+
+            "\n9. số ngày thuê: "+listCustomers[dsTen][8]+
+            "\n10. loại dịch vụ: " + listCustomers[dsTen][9]+
+            "\n11. loại phòng: " + listCustomers[dsTen][10])*1;
+        switch (edit) {
+            case 1: {
+                listCustomers[dsTen][0] = prompt("sửa tên");
+                break
+            }
+            case 2: {
+                listCustomers[dsTen][1] = prompt("sủa cmnd");
+                break;
+            }
+            case 3: {
+                listCustomers[dsTen][2] = prompt("sửa ngày sinh");
+                break;
+
+            }
+            case 4: {
+                listCustomers[dsTen][3] = prompt("sửa email");
+                break;
+            }
+            case 5: {
+                listCustomers[dsTen][4] = prompt("sửa địa chỉ");
+                break;
+            }
+            case 6: {
+                listCustomers[dsTen][5] = prompt("sủa loại khách hàng");
+                break;
+            }
+            case 7: {
+                listCustomers[dsTen][6] = prompt("sửa giảm giá");
+                break;
+            }
+            case 8: {
+                listCustomers[dsTen][7] = prompt("sửa số người đi kèm");
+                break;
+            }
+            case 9: {
+                listCustomers[dsTen][8] = prompt("sửa số ngày thuê");
+                break;
+            }
+            case 10: {
+                listCustomers[dsTen][9] = prompt("sửa loại dịch vụ");
+                break;
+            }
+            case 11: {
+                listCustomers[dsTen][10] = prompt("sửa lại phòng");
+                break;
+            }
+            default: {
+                alert("không xác định");
+                break;
+            }
+        }displayMainMenu()
+    }
+    function displayMainMenu() {
+        let menu = prompt("1. Add New Customer" + "\n2 .Display Information Customer" + "\n3. Edit Information Customer" + "\n4. Delete Customer" + "\n5 . Exit") * 1;
+        switch (menu) {
+            case 1: {
+                addNewCustomer();
+                break;
+            }
+            case 2: {
+                displayCustomers();
+                break;
+
+            }
+            case 3: {
+                editCustomer();
+                break;
+            }
+            case 4: {
+                deleteCustomer();
+                break;
+            }
+        }
+    }function deleteCustomer() {
+        var ten= "";
+        for (let i = 0; i <listCustomers.length; i++){
+            ten += i  + ". "+ listCustomers[i][0] + "\n";
+        }let dsTen = prompt(ten)*1;
+        for (let i = 0; i < listCustomers.length; i++){
+            if (dele = i){
+                listCustomers.splice(i, 1)
+            }
+        }displayMainMenu()
+    }
+let khachhang1 = new Customer;
+    displayMainMenu()
+</script>
+</body>
+</html>

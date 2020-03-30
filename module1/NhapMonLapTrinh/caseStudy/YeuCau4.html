@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNameCustomers = [];
+    while (true) {
+        let customer = prompt("1. Add Name Customer " + "\n" + "2. Delete Customer") * 1;
+        switch (customer) {
+            case 1: {
+                let add = prompt("Enter the number of customers you want to add: ") * 1;
+                for (let i = 0; i < add; i++) {
+                    let name = prompt("Enter the customer you want to add");
+                    arrNameCustomers.push(name);
+                    arrNameCustomers.sort()
+                } let NameCustomers = " ";
+                for (let i = 0; i < arrNameCustomers.length; i++){
+                    NameCustomers += i + 1 +". " + arrNameCustomers[i] +"\n"
+                }alert("list of customers: " + "\n" + NameCustomers);
+                break;
+            }case 2: {
+                let dele = prompt("Nhập tên của khách hàng bạn muốn xóa: ");
+                for (let i = 0; i < arrNameCustomers.length; i++){
+                    if (dele === arrNameCustomers[i]){
+                        arrNameCustomers.splice(i, 1)
+                    }let NameCustomers = " ";
+                    for (let i = 0; i < arrNameCustomers.length; i++) {
+                        NameCustomers += i + 1 +". " + arrNameCustomers[i] +"\n"
+                    }alert("list of customers: " + "\n" + NameCustomers);
+                    break;
+                }
+
+            }default: {
+                alert("Unknown")
+            }
+
+        }
+
+    }
+</script>
+</body>
+</html>

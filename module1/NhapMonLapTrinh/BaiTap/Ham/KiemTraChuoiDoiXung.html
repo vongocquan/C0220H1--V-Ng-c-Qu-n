@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let x = 0;
+    let name = prompt("nhập một chuỗi:");
+    let num = name.length / 2;
+    function isPalindrome(name) {
+        for (let i = 0; i < parseInt(num - 1); i++) {
+            name[i] == name[name.length--];
+            x ++
+
+        }if (x == parseInt(num))
+            return "là chuỗi đối xứng";
+        return "không phải là chuỗi đối xứng"
+
+
+    }alert(isPalindrome(name))
+</script>
 </body>
 </html>

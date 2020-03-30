@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let regexp = /^[0-9]{5}(-[0-9]{4})/;
+    let zipcode = prompt("nhập mã quốc gia mỹ: ");
+    function is_usZipCode(){
+        if (regexp.test(zipcode)){
+            return true;
+        }return false;
+    }alert(is_usZipCode())
+</script>
+</body>
+</html>

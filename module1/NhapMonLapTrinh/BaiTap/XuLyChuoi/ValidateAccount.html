@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = 0;
+    let regexp = /^[_a-z0-9]{6,}/;
+    let taiKhoan = prompt("nhập tài khoản: ");
+    function kiemTraTinhHopLeCuaTaiKhoan() {
+        if (regexp.test(taiKhoan)){
+            return true;
+        }return false;
+    }alert(kiemTraTinhHopLeCuaTaiKhoan())
+</script>
+</body>
+</html>

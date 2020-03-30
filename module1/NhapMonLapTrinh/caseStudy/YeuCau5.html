@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrCustomers = [];
+
+    function displayMainMenu() {
+        let menu = prompt("1. Add New Customer" + "\n2 .Display Information Customer" + "\n3. Edit Information Customer" + "\n4. Delete Customer" + "\n5 . Exit") * 1;
+        switch (menu) {
+            case 1: {
+                addNewCustomer();
+                break;
+            }
+            case 2: {
+                displayCustomers();
+                break;
+
+            }
+            case 3: {
+                editCustomer();
+                break;
+            }
+            case 4: {
+                deleteCustomer();
+                break;
+            }
+        }
+    }
+    function addNewCustomer(){
+        let add = [];
+        let name = prompt("nhập tên: ");
+        let idcard = prompt("nhập Cmnd: ");
+        let birthday = prompt("nhập ngày, tháng, năm sinh: ");
+        let email = prompt("nhập email: ");
+        let address = prompt("nhập địa chỉ: ");
+        let Customer  = prompt("nhập loại khách hàng (Diamond, Platinum, Gold, Silver, Member): ");
+        let discount = prompt("giảm giá bao nhiêu phần trăm: ");
+        let amount = prompt("nhập người đi kèm: ");
+        let day = prompt("nhập số ngày thuê: ");
+        let service = prompt("nhập loại dịch vụ (Villa, House, Room):  ");
+        let room = prompt("nhập loại phòng thuê (Vip, Business,  Normal): ");
+        add.push(name);
+        add.push(idcard);
+        add.push(birthday);
+        add.push(email);
+        add.push(address);
+        add.push(Customer);
+        add.push(discount);
+        add.push(amount);
+        add.push(day);
+        add.push(service);
+        add.push(room);
+        arrCustomers.push(add);
+        displayMainMenu()
+    }
+
+    function displayCustomers(){
+        var ten= "";
+        for (let i = 0; i <arrCustomers.length; i++){
+            ten += i  + ". "+ arrCustomers[i][0] + "\n";
+        }let dsTen = prompt(ten)*1;
+        alert("tên: "+ arrCustomers[dsTen][0] +
+        "\n cmnd: " + arrCustomers[dsTen][1] +
+        "\n ngày sinh: " + arrCustomers[dsTen][2]+
+        "\n email: " +arrCustomers[dsTen][3]+
+        "\n địa chỉ: " + arrCustomers[dsTen][4]+
+        "\n loại khách hàng: " +arrCustomers[dsTen][5]+
+        "\n giảm giá: " + arrCustomers[dsTen][6]+
+        "\n số người đi kèm: "+arrCustomers[dsTen][7]+
+        "\n số ngày thuê: "+arrCustomers[dsTen][8]+
+        "\n loại dịch vụ: " + arrCustomers[dsTen][9]+
+        "\n loại phòng: " + arrCustomers[dsTen][10]);
+        displayMainMenu()
+    }
+    function editCustomer(){
+        var ten= " ";
+        for (let i = 0; i < arrCustomers.length; i++){
+            ten += (i  + ". " + arrCustomers[i][0]) + "\n";
+        } dsTen = prompt(ten)*1;
+        let edit = prompt("1. tên: "+ arrCustomers[dsTen][0] +
+            "\n2. cmnd: " + arrCustomers[dsTen][1] +
+            "\n3. ngày sinh: " + arrCustomers[dsTen][2]+
+            "\n4. email: " +arrCustomers[dsTen][3]+
+            "\n5. địa chỉ: " + arrCustomers[dsTen][4]+
+            "\n6. loại khách hàng: " +arrCustomers[dsTen][5]+
+            "\n7. giảm giá: " + arrCustomers[dsTen][6]+
+            "\n8. số người đi kèm: "+arrCustomers[dsTen][7]+
+            "\n9. số ngày thuê: "+arrCustomers[dsTen][8]+
+            "\n10. loại dịch vụ: " + arrCustomers[dsTen][9]+
+            "\n11. loại phòng: " + arrCustomers[dsTen][10])*1;
+        switch (edit) {
+            case 1: {
+                arrCustomers[dsTen][0] = prompt("sửa tên");
+                break
+            }
+            case 2: {
+                arrCustomers[dsTen][1] = prompt("sủa cmnd");
+                break;
+            }
+            case 3: {
+                arrCustomers[dsTen][2] = prompt("sửa ngày sinh");
+                break;
+
+            }
+            case 4: {
+                arrCustomers[dsTen][3] = prompt("sửa email");
+                break;
+            }
+            case 5: {
+                arrCustomers[dsTen][4] = prompt("sửa địa chỉ");
+                break;
+            }
+            case 6: {
+                arrCustomers[dsTen][5] = prompt("sủa loại khách hàng");
+                break;
+            }
+            case 7: {
+                arrCustomers[dsTen][6] = prompt("sửa giảm giá");
+                break;
+            }
+            case 8: {
+                arrCustomers[dsTen][7] = prompt("sửa số người đi kèm");
+                break;
+            }
+            case 9: {
+                arrCustomers[dsTen][8] = prompt("sửa số ngày thuê");
+                break;
+            }
+            case 10: {
+                arrCustomers[dsTen][9] = prompt("sửa loại dịch vụ");
+                break;
+            }
+            case 11: {
+                arrCustomers[dsTen][10] = prompt("sửa lại phòng");
+                break;
+            }
+            default: {
+                alert("không xác định");
+                break;
+            }
+        }displayMainMenu()
+    }
+        function deleteCustomer() {
+            var ten= "";
+            for (let i = 0; i <arrCustomers.length; i++){
+                ten += i  + ". "+ arrCustomers[i][0] + "\n";
+            }let dsTen = prompt(ten)*1;
+            for (let i = 0; i < arrCustomers.length; i++){
+                if (dele = i){
+                    arrCustomers.splice(i, 1)
+                }
+            }displayMainMenu()
+            // let dele = prompt("1. tên: "+ arrCustomers[dsTen][0] +
+            //     "\n2. cmnd: " + arrCustomers[dsTen][1] +
+            //     "\n3. ngày sinh: " + arrCustomers[dsTen][2]+
+            //     "\n4. email: " +arrCustomers[dsTen][3]+
+            //     "\n5. địa chỉ: " + arrCustomers[dsTen][4]+
+            //     "\n6. loại khách hàng: " +arrCustomers[dsTen][5]+
+            //     "\n7. giảm giá: " + arrCustomers[dsTen][6]+
+            //     "\n8. số người đi kèm: "+arrCustomers[dsTen][7]+
+            //     "\n9. số ngày thuê: "+arrCustomers[dsTen][8]+
+            //     "\n10. loại dịch vụ: " + arrCustomers[dsTen][9]+
+            //     "\n11. loại phòng: " + arrCustomers[dsTen][10])*1;
+            // switch (dele) {
+            //     case 1: {
+            //         arrCustomers[dsTen][0] = "";
+            //         break
+            //     }
+            //     case 2: {
+            //         arrCustomers[dsTen][1] = "";
+            //         break;
+            //     }
+            //     case 3: {
+            //         arrCustomers[dsTen][2] = "";
+            //         break;
+            //
+            //     }
+            //     case 4: {
+            //         arrCustomers[dsTen][3] = "";
+            //         break;
+            //     }
+            //     case 5: {
+            //         arrCustomers[dsTen][4] = "";
+            //         break;
+            //     }
+            //     case 6: {
+            //         arrCustomers[dsTen][5] = "";
+            //         break;
+            //     }
+            //     case 7: {
+            //         arrCustomers[dsTen][6] = "";
+            //         break;
+            //     }
+            //     case 8: {
+            //         arrCustomers[dsTen][7] = "";
+            //         break;
+            //     }
+            //     case 9: {
+            //         arrCustomers[dsTen][8] = "";
+            //         break;
+            //     }
+            //     case 10: {
+            //         arrCustomers[dsTen][9] = "";
+            //         break;
+            //     }
+            //     case 11: {
+            //         arrCustomers[dsTen][10] = "";
+            //         break;
+            //     }
+            //     default: {
+            //         alert("không xác định");
+            //         break;
+            //     }
+            // }displayMainMenu()
+        }
+
+        displayMainMenu();
+</script>
+</body>
+</html>

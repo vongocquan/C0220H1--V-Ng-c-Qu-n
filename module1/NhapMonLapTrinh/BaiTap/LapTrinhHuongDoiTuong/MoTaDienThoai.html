@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        pin;
+        trangThai;
+        soanTN;
+        constructor(soanTN, pin, trangThai) {
+            this.pin = pin;
+            this.trangThai = trangThai;
+            this.soanTN = soanTN;
+        }kiemTraDienThoai (pin){
+            if (pin === 0){
+                return "điện thoại không hoạt động"
+            }else if (pin <= 100){
+                return "điện thoại hoạt động"
+            }
+        }
+        batDienThoai(){
+            if (this.trangThai === "bật"){
+                return "điện thoạt đã được bật"
+            }else if (this.trangThai === "tắt"){
+                return "điện thoại đã được tắt"
+            }
+        }
+        guiTN (){
+            this.soanTN = prompt("gửi tin nhắn: ")
+        }nhanTN(){
+            alert("nhận tin nhắn: " + this.soanTN)
+        }
+    }let nokia = new Mobile();
+    alert(nokia.kiemTraDienThoai(12));
+    //     SoanTN(mobile, message){
+    //         mobile.recevieMessage(message);
+    //     recevieMessage(message){
+    //         this.soanTN.push(message);
+    //     nhanTN (){
+    //         alert("nhận tin nhắn: " + this.soanTN)
+    //     }
+    //     batDienThoai(trangThai){
+    //         this.trangThai = trangThai;
+    //     }
+    // }
+    // let nokia =  new Mobile();
+    // nokia.batDienThoai(true);
+    let iphone = new Mobile();
+    nokia.guiTN();
+    iphone.nhanTN();
+</script>
+</body>
+</html>

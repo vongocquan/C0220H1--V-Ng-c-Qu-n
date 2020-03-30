@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Battery{
+        energy;
+        constructor(energy) {
+            this.energy = energy;
+        }
+        decreaseEnergy(){
+            if (this.energy > 0){
+                this.energy --;
+            }
+        }
+    }
+    class FlashLamp{
+        status;
+        battery;
+        constructor(status, battery) {
+            this.status = status;
+            this.battery = battery;
+        }
+        light(){
+            if (this.status){
+                alert("đèn sáng")
+            }else {
+                alert("đèn không sáng")
+            }
+        }
+        turnOn (){
+            this.status = true;
+        }turnOf(){
+            this.status = false;
+        }
+    }
+    let battery = new Battery();
+    let flashLamp = new FlashLamp();
+    flashLamp.turnOn();
+    battery.decreaseEnergy();
+    flashLamp.light();
+    flashLamp.turnOf();
+    flashLamp.light()
+</script>
+</body>
+</html>

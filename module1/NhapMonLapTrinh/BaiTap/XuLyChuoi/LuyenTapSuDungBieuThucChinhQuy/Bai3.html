@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nguyenAm = "aâăeêioôơuưyAÂĂEÊIÔƠUƯY";
+    let phuAm = "bcdđghklmnpqrstvxBCDĐGHKLMNPQRSTVX";
+    let demNguenAm = 0;
+    let demPhuAm= 0;
+    let chuoi = prompt("nhập một chuỗi: ");
+    function demNAVaPA() {
+        for (let i = 0; i < chuoi.length; i++){
+            if (nguyenAm.indexOf(chuoi[i]) !== -1){
+                demNguenAm++;
+            }else if (phuAm.indexOf(chuoi[i]) !==-1){
+                demPhuAm++
+            }
+        }return "phụ âm= "+ demPhuAm + "\nnguyên âm= " + demNguenAm
+    }alert(demNAVaPA())
+</script>
+</body>
+</html>

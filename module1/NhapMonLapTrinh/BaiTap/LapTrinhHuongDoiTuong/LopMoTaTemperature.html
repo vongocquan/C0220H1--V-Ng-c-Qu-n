@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    class Temperature{
+        get C() {
+            return this._C;
+        }
+
+        set C(value) {
+            this._C = value;
+        }
+        get F(){
+            return C * 18000 + 3200;
+        }
+        get K(){
+            return C + 273.15
+        }
+        constructor(C) {
+            this._C = C;
+        }
+    }
+    let temperature = new Temperature(25);
+    let C = temperature.C;
+    let F = temperature.F;
+    let K = temperature.K;
+    alert("F= " + F + "\n" + "K= " + K)
+</script>
 </body>
 </html>

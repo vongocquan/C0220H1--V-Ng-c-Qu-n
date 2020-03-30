@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class lamp{
+        switch;
+        lightBulb;
+        constructor( Switch, LightBulb) {
+            this.switch = Switch;
+            this.lightBulb = LightBulb;
+        }lamSangDen(){
+            if (this.switch){
+                alert("đèn sáng")
+            }else {
+                alert("đèn không sáng")
+            }
+        }turOn(){
+            this.switch = true;
+        }turOff(){
+            this.switch = false;
+        }
+    }let lamp1 =new lamp();
+    for (i = 0; i< 10; i++){
+        lamp1.turOn();
+        lamp1.lamSangDen();
+    }
+</script>
+</body>
+</html>

@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    var a = prompt("nhập số thứ nhất: ")*1;
+    var b = prompt("nhập số thứ hai: ")*1;
+    var c = prompt("nhập số thứ ba: ")*1;
+    function timSoNhoNhat(a, b, c) {
+        if (a<b){
+            if (a<c){
+                return a;
+            }return c;
+        }else {
+            if (b<c){
+                return b
+            }return c;
+        }
+
+    }alert(timSoNhoNhat(a, b, c) + " là số nhỏ nhất")
+</script>
 </body>
 </html>

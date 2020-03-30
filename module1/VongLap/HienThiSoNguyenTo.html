@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<input type="button" value="xuat so nguyen to" onclick="xuatSoNguyenTo(20)"/>
+<script>
+    function xuatSoNguyenTo(m){
+        let dem=0;
+        let i=2;
+        while(dem<m){
+            if(kiemTraSoNguyenTo(i)){
+                document.write(i+" ");
+                dem++;
+
+            }
+            i++
+        }
+    }
+
+    function kiemTraSoNguyenTo(n){
+        if(n<=2){
+            return true;
+        }else{
+            for (i=2;i<= Math.sqrt(n);i++){
+                if(n % i == 0)
+                    return false;
+            }}
+        return true;
+    }
+</script>
+
+
 </body>
 </html>

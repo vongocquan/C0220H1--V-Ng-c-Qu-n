@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple{
+        get mass() {
+            return this._mass;
+        }
+
+        set mass(value) {
+            this._mass = value;
+        }
+        _mass;
+        constructor() {
+            this._mass ;
+        }
+    }
+    class Human {
+        get name() {
+            return this._name;
+        }
+
+        set name(value) {
+            this._name = value;
+        }
+
+        get sex() {
+            return this._sex;
+        }
+
+        set sex(value) {
+            this._sex = value;
+        }
+
+        get weight() {
+            return this._weight;
+        }
+
+        set weight(value) {
+            this._weight = value;
+        }
+        _name;
+        _sex;
+        _weight;
+        constructor(name, sex, weight){
+            this._name = name;
+            this._sex = sex;
+            this._weight = weight;
+
+        }eatApple (mass){
+            apple = 10;
+            for (let i =0; i< 10; i++){
+                mass++;
+                apple--;
+                alert("khối lượng người: " + mass);
+                alert("khối lượng táo: " + apple)
+            }
+        }
+
+    }
+    let apple = new Apple();
+    let quan = new Human();
+    quan.eatApple(40);
+    let human = new Human("hai", "nam", 1.7);
+    let name = human.name;
+    let sex = human.sex;
+    let weight = human.weight;
+    alert("tên: "+name + "\n giới tính: " + sex +"\n chiều cao: " + weight)
+</script>
+</body>
+</html>

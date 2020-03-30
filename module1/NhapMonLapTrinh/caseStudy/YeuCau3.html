@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let day;
+    let amount;
+    let birthday;
+    let email;
+    let check = false;
+    let idcard;
+    let name = prompt("nhập tên: ");
+    do {
+        idcard = prompt("phập cmnd: ");
+        if (!isNaN(idcard)){
+            if (idcard > 9999999 && idcard < 100000000){
+                if (idcard % parseInt(idcard) == 0){
+                    check = true
+                }
+            }
+        }if (!check){
+            alert("cmnd không xác định");
+        }
+    }while (!check);
+    check = false;
+    do {
+        birthday = prompt("nhập ngày, tháng, năm sinh: ");
+        if (birthday.charAt(2) === "/" && birthday.charAt(5) === "/") {
+            let day = birthday.substring(0, 2);
+            let mouth = birthday.substring(3, 5);
+            let year = birthday.substring(6, 10);
+            if (!isNaN(day) && !isNaN(mouth) && !isNaN(year)) {
+                if (day % parseInt(day) == 0 && mouth % parseInt(mouth) ==0 && year % parseInt(year) ==0) {
+                    if (day < 32 && mouth < 13 && year > 999 && year < 10000) {
+                        check = true;
+                    }
+                }
+            }
+        }if (!check) {
+            alert("birthday không xác định");
+        }
+    } while (!check);
+    check = false;
+    do {
+        email = prompt("nhập email: ");
+        for (let i = 1; i < email.length; i++){
+            if (email.charAt(i) === "@")
+                for (let j = i + 1; j < email.length; j++){
+                    if (email.charAt(j) === ".")
+                        check = true
+                }
+        }if (!check){
+            alert("email không xác định");
+        }
+    }while (!check);
+    check = false;
+    let address = prompt("nhập địa chỉ: ");
+    let Customer  = prompt("nhập loại khách hàng (Diamond, Platinum, Gold, Silver, Member): ");
+    let discount = prompt("giảm giá bao nhiêu phần trăm: ")*1;
+    do {
+        amount = prompt("nhập người đi kèm: ");
+        if (amount >= 0){
+            if (!isNaN(amount)) {
+                if (amount % parseInt(amount)== 0) {
+                    check = true;
+                }
+                }
+        }if (!check){
+            alert("không xác định")
+        }
+    }while (!check);
+    check = false;
+    do {
+        day = prompt("nhập số ngày thuê: ");
+        if (day > 0){
+            if (!isNaN(day)) {
+                if (day % parseInt(day) == 0) {
+                    check = true;
+                }
+            }
+        }if (!check){
+            alert("không xác định")
+        }
+    }while (!check);
+    let service = prompt("nhập loại dịch vụ (Villa, House, Room):  ");
+    let room = prompt("nhập loại phòng thuê (Vip, Business,  Normal): ");
+    let newname = "";
+    for (let i = 0; i <name.length; i ++){
+        if (name.charAt(i) === " " && name.charAt(i+1) === " "){
+            continue;
+
+        } if (i === 0 || name.charAt(i - 1) ===" "){
+            newname += name.charAt(i).toUpperCase();
+            continue;
+
+        }newname += name.charAt(i)
+    }
+    let newaddress = "";
+    for (let i = 0; i < address.length; i++ ){
+        if (address.charAt(i) === " " && address.charAt(i +1) === " "){
+            continue;
+        }if (i === 0 || address.charAt(i - 1) === " "){
+            newaddress += address.charAt(i).toUpperCase();
+        }newaddress += address.charAt(i)
+    }
+
+</script>
+</body>
+</html>
